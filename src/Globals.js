@@ -1,3 +1,3 @@
 module.exports = {
-    Detail : 'Detail',
+    onSignIn : null,
 };

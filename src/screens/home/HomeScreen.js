@@ -8,7 +8,11 @@ import Collection from './Collection';
 import Products from './Products';
 import MySwiper from './MySwiper';
 
-const URL = "http://192.168.51.2/app/";
+import getTopProduct from '../../api/GetTopProduct';
+import getTocken from '../../api/GetTocken';
+
+
+const URL = 'http://192.168.51.2/app/';
 
 export default class HomeScreen extends Component{
   constructor(props){
@@ -18,15 +22,12 @@ export default class HomeScreen extends Component{
     }
   }
   componentDidMount(){
-    fetch(URL)
-    .then(response => response.json())
-    .then(resJSON=>{
+    getTopProduct().then(resJSON=>{
       const { product } = resJSON;
       this.setState({
         topProduct : product,
       });
-    })
-    .catch(error=>{
+    }).catch(error=>{
       console.log(error);
     });
   }

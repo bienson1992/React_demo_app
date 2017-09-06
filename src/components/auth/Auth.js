@@ -22,13 +22,18 @@ export default class Auth extends Component{
       isSignIn : false,
     });
   }
+  goBackToMain(){
+    this.props.navigation.goBack();
+    this.props.navigation.navigate('DrawerOpen');
+  }
+
   render(){
     const {
       wraper,buttonSignIn,buttonSignOut,textActive,
       textInaActive,textSignIn,
       btnAccount} = styles;
     const {isSignIn} = this.state;
-    const Authen = isSignIn ? <SignIn styles={styles} /> : <SignUp/>;
+    const Authen = isSignIn ? <SignIn styles={styles} goBackToMain={()=>this.goBackToMain()} /> : <SignUp/>;
     return (
       <View style={wraper}>
         {Authen}

@@ -10,6 +10,7 @@ import HeaderLeft from './components/header/HeaderLeft';
 import HeaderRight from './components/header/HeaderRight';
 import Authencation from './components/auth/Auth';
 import Detail from './screens/home/Detail';
+import Blank from './screens/home/Blank';
 
 const { width } = Dimensions.get('window');
 
@@ -26,7 +27,7 @@ const Main = StackNavigator({
   },
   Auth : {
     screen: Authencation,
-    navigationOptions :{
+    navigationOptions : {
       title: 'Wearing a dress',
       headerTintColor: '#FFF',
       headerStyle: {backgroundColor:'#03BC9E'},
@@ -35,6 +36,9 @@ const Main = StackNavigator({
   },
   Detail: {
     screen: Detail,
+  },
+  Blank:{
+    screen: Blank,
   }
 });
 
